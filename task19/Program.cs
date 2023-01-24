@@ -33,7 +33,7 @@ while (five < 10000 || five > 99999) //Проверяем правильност
         Console.WriteLine("Вы ввели неверное число. Введите пятизначное число: ");
         five = Convert.ToInt32(Console.ReadLine());
     }
-if ((five / 10000) % 10 != five % 10 || (five / 1000) % 10 != (five / 10) % 10)
+if ((five / 10000) % 10 != five % 10 | (five / 1000) % 10 != (five / 10) % 10)
     {
         Console.WriteLine(five + " - не является палиндромом");
     }
@@ -49,19 +49,19 @@ else
 
 // 3 Вариант с циклом for внутри метода, для числа любой длины
 
-string palindrom (int N) // Создаем метод
-{
-    int len = N.ToString().Length;
-    string newN = Convert.ToString(N);
+string palindrom (int number) // Создаем метод
+{ 
+    int len = number.ToString().Length;
+    string newNum = Convert.ToString(number);
     for (int i = 0; i < len/2; i++) // Цикл для проверки зеркальных значений
         {
-            if (newN[i] != newN[len - 1 - i]) return " - не палиндром";
+            if (newNum[i] != newNum[len - 1 - i]) return " - не палиндром";
         }
     return " - палиндром";
 }
 
 Console.WriteLine("Вариант 3. Введите число для проверки на палиндром: ");
-int N = Convert.ToInt32(Console.ReadLine());
-Console.Write(N + palindrom(N));
+int number = Convert.ToInt32(Console.ReadLine());
+Console.Write(number + palindrom(number));
 
 // Вариант 3 мне больше нравится
